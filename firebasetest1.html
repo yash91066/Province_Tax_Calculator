@@ -10,15 +10,26 @@
         <div id="qunit-fixture"></div>
         <script src="//code.jquery.com/qunit/qunit-1.22.0.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mockjax/1.6.2/jquery.mockjax.js"></script>
         <script>
+            jQuery.mockjax({
+              url: "/restful/fortune",
+              responseText: {
+                status: "success",
+                fortune: "Are you a mock turtle?"
+              }
+            });
+            
+            
             QUnit.test( "test of new firebase url", function( assert ) {
-                assert.expect( 2 );
+                assert.expect( 3 );
                 var done = assert.async();
                 var done2 = assert.async();
+                var done3 = assert.async();
                 jQuery.ajax({
                     url: "https://dazzling-heat-1553.firebaseio.com/tests.json"
                 }).done(function(data){
-                    assert.ok(true, JSON.stringify(data));
+                    assert.ok(data != null, JSON.stringify(data));
                     done();
                 }).fail(function(err){
                     assert.ok( false, JSON.stringify(err) );
@@ -27,11 +38,20 @@
                 jQuery.ajax({
                     url: "https://dazzling-heat-1553.firebaseio.com/tests2.json"
                 }).done(function(data){
-                    assert.ok(true, JSON.stringify(data));
+                    assert.ok(data != null, JSON.stringify(data));
                     done2();
                 }).fail(function(err){
                     assert.ok( false, JSON.stringify(err) );
                     done2();
+                });
+                jQuery.ajax({
+                    url: "/restful/fortune"
+                }).done(function(data){
+                    assert.ok(data != null, JSON.stringify(data));
+                    done3();
+                }).fail(function(err){
+                    assert.ok( false, JSON.stringify(err) );
+                    done3();
                 });
             });
         </script>
