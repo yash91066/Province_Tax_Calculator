@@ -28,10 +28,10 @@
                     url: "/restful/fortune"
                 }).done(function(data){
                     assert.ok(data != null, JSON.stringify(data));
-                    done3();
+                    done();
                 }).fail(function(err){
                     assert.ok( false, JSON.stringify(err) );
-                    done3();
+                    done();
                 });
             });
         </script>
