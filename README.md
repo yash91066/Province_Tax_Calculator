@@ -123,7 +123,7 @@ The above is a failing test until we add to firebase:
     ".write": "auth != null",
         "tests":{
           ".read":true
-        },
+        }
 
   }
 }
