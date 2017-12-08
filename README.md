@@ -114,6 +114,22 @@ A QUnit test contains at least 1 assertion. In this case `assert.equal( value, "
 
 ```
 
+The above is a failing test until we add to firebase:
+
+```
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null",
+        "tests":{
+          ".read":true
+        },
+
+  }
+}
+
+```
+
 Perhaps just out of habit, I like to do my api testing with jQuery.ajax. This is an example of testing my endpoint on the firebase api. Note the use of `assert.expect` and `assert.async`.
 
 ### [Mockjax mock](https://rhildred.github.io/qUnitIntro/mockjax.html)
