@@ -1,8 +1,42 @@
 <head>
     <link rel="stylesheet" href="css/main.css" />
 </head>
+
 <body>
-    <input id="price" /><button id="calculate">Calculate</button>
-    <p>Hst on <span id="amount">0</span> is <span id="hst">0</span></p>
+
+    <div>
+        <label for="EnterTaxIncome">Enter Tax Income</label>
+        <input type="text" name="EnterTaxIncome" id="EnterTaxIncome">
+    </div>
+    <div>
+        <label for="EnterTaxDeducted">Enter Tax Deducted</label>
+        <input type="text" name="EnterTaxDeducted" id="EnterTaxDeducted">
+    </div>
+    <div>
+        <label for="OntarioTax">Ontario Tax</label>
+        <input type="text" name="OntarioTax" id="OntarioTax" disabled>
+    </div>
+
+    <div>
+        <label for="FederalTax">Federal Tax</label>
+        <input type="text" name="FederalTax" id="FederalTax" disabled>
+    </div>
+
+    <div>
+        <label for="Total">Total</label>
+        <input type="text" name="Total" id="Total" disabled>
+    </div>
+    <div>
+        <label for="Owing">Owing</label>
+        <input type="text" name="Owing" id="Owing" disabled>
+    </div>
+
+    <button id="calculate">Calculate</button>
+
+
+
+
+
+
     <script type="module" src="js/main.js"></script>
 </body>

@@ -1,7 +1,7 @@
-export default class Hst{
-    calculate(amount, province){
+export default class Hst {
+    calculate(amount, province) {
         let nTax;
-        switch(province){
+        switch (province) {
             case 'ON':
                 nTax = amount * .13;
                 break;
